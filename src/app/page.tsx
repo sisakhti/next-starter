@@ -8,8 +8,10 @@ import ListItem from '@mui/material/ListItem';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import MediaCard from '@/components/MediaCard';
+import {useTranslation} from "./i18n";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { t } = await useTranslation('messages');
   return (
     <Box
       sx={{
@@ -18,7 +20,7 @@ export default function HomePage() {
     >
       <Box>
         <Alert severity="info" sx={{ mt: 2, mb: 5 }}>
-          <AlertTitle>Hello 👋</AlertTitle>
+          <AlertTitle>{t('hello')} 👋</AlertTitle>
           This app uses the Next.js App Router and Material UI v5.
         </Alert>
 
